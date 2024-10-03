@@ -15,7 +15,7 @@ class AddNotePage extends StatefulWidget {
 class _AddNotePageState extends State<AddNotePage> {
   String appBarTitle;
   Note note;
-  Color color = Color(0xff040542);
+  Color color = const Color(0xff040542);
 
   _AddNotePageState(this.note, this.appBarTitle);
 
@@ -83,7 +83,7 @@ class _AddNotePageState extends State<AddNotePage> {
             child: Container(
               width: 500,
               height: 180,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff040542),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(200),
@@ -98,7 +98,7 @@ class _AddNotePageState extends State<AddNotePage> {
               height: 450,
               decoration: BoxDecoration(
                 color: Colors.grey[300],
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.white,
                     offset: Offset(4, 4),
@@ -131,7 +131,7 @@ class _AddNotePageState extends State<AddNotePage> {
                         });
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextField(
@@ -155,7 +155,7 @@ class _AddNotePageState extends State<AddNotePage> {
                       textInputAction: TextInputAction.newline,
                       maxLines: 4,
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         foregroundColor: color,
@@ -167,7 +167,7 @@ class _AddNotePageState extends State<AddNotePage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               backgroundColor: Colors.grey[400],
-                              content: Text(
+                              content: const Text(
                                   'The topic and the description can\'nt be empty',
                                   style: TextStyle(color: Colors.black)),
                             ),
@@ -176,7 +176,7 @@ class _AddNotePageState extends State<AddNotePage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               backgroundColor: Colors.grey[400],
-                              content: Text(
+                              content: const Text(
                                   'The topic and the description can\'nt be empty',
                                   style: TextStyle(color: Colors.black)),
                             ),
@@ -187,7 +187,7 @@ class _AddNotePageState extends State<AddNotePage> {
                           });
                         }
                       },
-                      child: Text('Save'),
+                      child: const Text('Save'),
                     ),
                   ],
                 ),

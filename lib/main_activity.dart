@@ -22,7 +22,7 @@ class _MainActivityState extends State<MainActivity> {
   bool isDarkMode = false;
   String fontStyle = 'bodoniModa';
   double fontSize = 12.0;
-  Color color = Color(0xff040542);
+  Color color = const Color(0xff040542);
   late Note boxNote;
   @override
   void initState() {
@@ -52,7 +52,7 @@ class _MainActivityState extends State<MainActivity> {
         ),
         bottom: isSearching == true
             ? PreferredSize(
-                preferredSize: Size.fromHeight(25),
+                preferredSize: const Size.fromHeight(25),
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: SearchBar(
@@ -90,7 +90,7 @@ class _MainActivityState extends State<MainActivity> {
                 setState(() {
                 });
               } ,
-              icon: Icon(Icons.delete_forever_rounded)),
+              icon: const Icon(Icons.delete_forever_rounded)),
           IconButton(
             color: color,
             icon: const Icon(Icons.settings),
@@ -141,18 +141,18 @@ class _MainActivityState extends State<MainActivity> {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey[500]!,
-                            offset: Offset(-4, -4),
+                            offset: const Offset(-4, -4),
                             blurRadius: 15,
                             spreadRadius: 1,
                           ),
-                          BoxShadow(
+                          const BoxShadow(
                             color: Colors.white,
                             offset: Offset(4, 4),
                             blurRadius: 15,
                             spreadRadius: 5,
                           ),
                         ],
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(Radius.circular(50)),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,7 +199,7 @@ class _MainActivityState extends State<MainActivity> {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: IconButton(
-                              icon: Icon(Icons.delete, color: Colors.red),
+                              icon: const Icon(Icons.delete, color: Colors.red),
                               onPressed: () {
                                 setState(() {
                                   noteBox.deleteAt(index);
@@ -246,7 +246,7 @@ class _MainActivityState extends State<MainActivity> {
     await prefs.setBool('log_in', false);
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginPage()),
+      MaterialPageRoute(builder: (context) => const LoginPage()),
     );
   }
 

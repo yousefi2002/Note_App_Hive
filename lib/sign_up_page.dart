@@ -11,7 +11,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  Color color = Color(0xff040542);
+  Color color = const Color(0xff040542);
 
   Future<void> signUp() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,7 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Container(
               width: 500,
               height: 180,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff040542),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(200),
@@ -48,70 +48,69 @@ class _SignUpPageState extends State<SignUpPage> {
           Positioned(
             left: 50,
             right: 50,
-            top: 150,            child: Container(
-              child: Container(
-                height: 450,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(25),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(4, 4),
-                      blurRadius: 15,
-                      spreadRadius: 1,
+            top: 150,
+            child: Container(
+              height: 450,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(4, 4),
+                    blurRadius: 15,
+                    spreadRadius: 1,
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: color),
+                            borderRadius: BorderRadius.circular(25)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: color),
+                            borderRadius: BorderRadius.circular(25)
+                        ),
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: color),
+                      ),
+                    ),
+                    const SizedBox(height: 20,),
+                    TextField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: color),
+                            borderRadius: BorderRadius.circular(25)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: color),
+                            borderRadius: BorderRadius.circular(25)
+                        ),
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: color),
+                      ),
+                    ),
+                    const SizedBox(height: 20,),
+                    ElevatedButton(
+                      onPressed: signUp,
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: color,
+                        backgroundColor: Colors.grey[300],
+                        elevation: 15,
+                      ),
+                      child: const Text('Sign Up'),
                     ),
                   ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: color),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: color),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          labelText: 'Email',
-                          labelStyle: TextStyle(color: color),
-                        ),
-                      ),
-                      SizedBox(height: 20,),
-                      TextField(
-                        controller: passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: color),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: color),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(color: color),
-                        ),
-                      ),
-                      SizedBox(height: 20,),
-                      ElevatedButton(
-                        onPressed: signUp,
-                        child: Text('Sign Up'),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: color,
-                          backgroundColor: Colors.grey[300],
-                          elevation: 15,
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
               ),
             ),
